@@ -8,7 +8,11 @@ class App extends React.Component {
     super();
 
     this.state = {
-      members: [],
+      // image: {},
+      name: '',
+      followers: '',
+      url: '',
+
     };
   }
 
@@ -16,7 +20,15 @@ class App extends React.Component {
     axios.get(`https://api.github.com/users/Kenya-a`)
     
     .then(response => {
-      console.log('App.js Response:', response)
+      console.log('App.js Response:', response.data)
+      const memberInfo = response.data
+      this.setState({
+        // image: memberInfo.image,
+        name: memberInfo.login,
+        followers: memberInfo.followers,
+        url: memberInfo.url,
+      })
+
     })
 
     .catch(error => {
@@ -32,7 +44,15 @@ class App extends React.Component {
     return (
       <div>
         <h1>Members:</h1>
-        <Card/>
+    
+        <Card
+        name = {this.state.name}
+        // image = {this.state.image}
+        followers = {this.state.followers}
+        url = {this.state.url}
+
+        />
+      
       </div>
     );
   }
