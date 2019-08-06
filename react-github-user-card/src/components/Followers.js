@@ -45,8 +45,6 @@ class Followers extends React.Component {
                 followers = {e.followers_url}
             />)}
 
-
-
             </div>
 
         )
