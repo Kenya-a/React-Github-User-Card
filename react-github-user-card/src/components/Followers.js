@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
-//Followers Data
+import FollowersCards from './FollowerCards'
 
 class Followers extends React.Component {
     constructor() {
@@ -30,16 +29,24 @@ class Followers extends React.Component {
         
     };
 
-
     componentDidMount() {
         this.getFollowers();
     }
 
-    render() {
+    render(key) {
+        console.log('Console in Render',this.state.followers)
         return(
             <div>
-            <h1>Hello from followers.js</h1>
-            {/* {this.state.followers.map(element =>{return key={element}})} */}
+            {/* {this.state.followers.map(e => key=(e.login))} */}
+            {this.state.followers.map(e => <FollowersCards
+                name = {e.login}
+                image = {e.avatar_url}
+                url = {e.html_url}
+                followers = {e.followers_url}
+            />)}
+
+
+
             </div>
 
         )
