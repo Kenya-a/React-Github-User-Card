@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Card from './components/Card';
+import Cards from './components/Card';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      // image: {},
+      image: {},
       name: '',
       followers: '',
       url: '',
@@ -23,7 +23,7 @@ class App extends React.Component {
       console.log('App.js Response:', response.data)
       const memberInfo = response.data
       this.setState({
-        // image: memberInfo.image,
+        image: memberInfo.avatar_url,
         name: memberInfo.login,
         followers: memberInfo.followers,
         url: memberInfo.url,
@@ -45,9 +45,9 @@ class App extends React.Component {
       <div>
         <h1>Members:</h1>
     
-        <Card
+        <Cards
         name = {this.state.name}
-        // image = {this.state.image}
+        image = {this.state.image}
         followers = {this.state.followers}
         url = {this.state.url}
         />

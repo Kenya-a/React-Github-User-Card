@@ -17,12 +17,17 @@ class Followers extends React.Component {
         axios.get(`https://api.github.com/users/Kenya-a/followers`)
     
         .then(response => {
-            console.log('Followers.js Response:', response)
+            console.log('Followers.js Response:', response.data)
+            this.setState({
+                followers: response.data,
+
+            })
         })
     
         .catch(error => {
             console.log('F.Error: ', error)
         });
+        
     };
 
 
@@ -32,8 +37,11 @@ class Followers extends React.Component {
 
     render() {
         return(
+            <div>
+            <h1>Hello from followers.js</h1>
+            {/* {this.state.followers.map(element =>{return key={element}})} */}
+            </div>
 
-            <h1>Hello</h1>
         )
     }
 }
