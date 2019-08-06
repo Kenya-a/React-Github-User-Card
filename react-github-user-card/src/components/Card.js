@@ -1,4 +1,5 @@
 import React from 'react';
+import Followers from './Followers'
 
 //Card Data
 
@@ -11,6 +12,7 @@ const Card = ({name, followers, url}) => {
             <h2>{name}</h2>
             <p>{followers}</p>
             <p>{url}</p>
+            <Followers/>
 
         </div>
         

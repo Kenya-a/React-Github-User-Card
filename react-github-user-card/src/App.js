@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Card from './components/Card'
+import Card from './components/Card';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -50,8 +50,8 @@ class App extends React.Component {
         // image = {this.state.image}
         followers = {this.state.followers}
         url = {this.state.url}
-
         />
+
       
       </div>
     );
